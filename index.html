@@ -164,7 +164,7 @@
     }
 
     list.forEach(function (name, index) {
-      var url = BASE + name;
+      var url = BASE + encodeURIComponent(name);
       var label = name.replace(/\.[^.]+$/, "").replace(/[-_]+/g, " ");
 
       var col = document.createElement("div");
@@ -225,7 +225,7 @@
   function openLb(i) {
     if (i < 0 || i >= items.length) return;
     current = i;
-    var url = BASE + items[i];
+    var url = BASE + encodeURIComponent(items[i]);
     lbImg.src = url;
     lbImg.alt = items[i];
     lbName.textContent = items[i];
